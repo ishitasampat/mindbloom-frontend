@@ -7,11 +7,12 @@ import {
   BarChart3
 } from "lucide-react";
 
-export default function Landing() {
+export default function Landing({ darkMode, setDarkMode }) {
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50 dark:bg-gray-950">
 
-      <Navbar />
+    <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+
 
       <section className="flex flex-col items-center justify-center text-center px-6 py-32">
 
@@ -108,11 +109,14 @@ export default function Landing() {
   </div>
 
 </div>
-
+<div className="text-center py-10 text-gray-500">
+  Developed by students of ISE
+</div>
 </section>
 
       </section>
 
     </div>
+    
   );
 }

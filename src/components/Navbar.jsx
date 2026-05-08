@@ -1,14 +1,16 @@
+
 import { Link } from "react-router-dom";
+import { Moon, Sun } from "lucide-react";
 
-export default function Navbar() {
+export default function Navbar({ darkMode, setDarkMode }) {
   return (
-    <nav className="w-full bg-white shadow-sm px-8 py-4 flex items-center justify-between">
+    <nav className="w-full bg-white dark:bg-gray-900 shadow-sm px-8 py-4 flex items-center justify-between transition duration-300">
 
-      <h1 className="text-3xl font-bold text-violet-600">
-        MindBloom
-      </h1>
+      <h1 className="text-3xl font-bold text-violet-500">
+  MindBloom
+</h1>
 
-      <div className="flex gap-6 text-gray-700 font-medium">
+      <div className="flex gap-6 text-gray-700 dark:text-gray-200 font-medium items-center">
 
         <Link to="/">Home</Link>
 
@@ -22,14 +24,14 @@ export default function Navbar() {
 
         <Link to="/reports">Reports</Link>
 
-      </div>
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className="p-3 rounded-xl bg-gray-100 dark:bg-gray-800 transition"
+        >
+          {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+        </button>
 
-      <Link
-        to="/login"
-        className="bg-violet-600 text-white px-5 py-2 rounded-xl"
-      >
-        Login
-      </Link>
+      </div>
 
     </nav>
   );
