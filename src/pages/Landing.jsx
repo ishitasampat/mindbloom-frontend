@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import heroImage from "../assets/usethis.png";
 
 import {
   Brain,
@@ -9,150 +10,164 @@ import {
 
 export default function Landing({ darkMode, setDarkMode }) {
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-gray-950">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-violet-50 to-slate-100 dark:bg-gray-950">
 
-    <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
+      {/* HERO SECTION */}
+      <section className="max-w-7xl mx-auto px-8 py-20">
 
-      <section className="flex flex-col items-center justify-center text-center px-6 py-32">
+        <div className="grid md:grid-cols-2 items-center gap-10">
 
-        <h1 className="text-7xl font-bold leading-tight max-w-5xl">
-          AI-Driven Early
-          <span className="text-violet-600">
-            {" "}Neurodevelopmental Screening
-          </span>
-        </h1>
+          {/* LEFT SIDE */}
+          <div>
 
-        <p className="mt-8 text-gray-600 text-xl max-w-3xl leading-relaxed">
-          MindBloom combines Artificial Intelligence, Computer Vision,
-          Behavioral Analysis, and Cognitive Therapy Monitoring
-          to support early autism screening and therapy evaluation.
-        </p>
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+              AI-Driven Early
+              <span className="block text-violet-600">
+                Neurodevelopmental Screening
+              </span>
+            </h1>
 
-        <div className="flex gap-6 mt-10">
+            <p className="mt-6 text-lg text-gray-600 leading-relaxed max-w-xl">
+              MindBloom combines Artificial Intelligence,
+              Computer Vision, Behavioral Analysis and
+              Cognitive Therapy Monitoring to support
+              early autism screening and therapy evaluation.
+            </p>
 
-          <button className="bg-violet-600 text-white px-8 py-4 rounded-2xl text-lg font-semibold">
-            Get Started
-          </button>
+            <div className="flex gap-4 mt-8">
 
-          <button className="border border-gray-300 px-8 py-4 rounded-2xl text-lg font-semibold">
-            Learn More
-          </button>
+              <button className="bg-violet-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-violet-700 transition">
+                Get Started
+              </button>
+
+              <button className="border border-gray-300 px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition">
+                Learn More
+              </button>
+
+            </div>
+
+          </div>
+
+          {/* RIGHT SIDE IMAGE */}
+          <div className="flex justify-center">
+
+            <img
+              src={heroImage}
+              alt="MindBloom"
+              className="w-[450px] md:w-[550px] opacity-20"
+            />
+
+          </div>
 
         </div>
-        <section className="px-10 pb-24">
 
-  <h2 className="text-5xl font-bold text-center mb-16">
-    Core Features
-  </h2>
-  <section className="py-24 px-10">
+      </section>
 
-  <h2 className="text-5xl font-bold text-center mb-16">
-    How MindBloom Works
-  </h2>
+      {/* HOW IT WORKS */}
+      <section className="max-w-7xl mx-auto px-8 py-12">
 
-  <div className="grid md:grid-cols-5 gap-6">
+        <h2 className="text-4xl font-bold text-center mb-12">
+          How MindBloom Works
+        </h2>
 
-    <div className="bg-white p-6 rounded-3xl shadow">
-      <h3 className="font-bold text-violet-600">1</h3>
-      <p>Upload Video</p>
-    </div>
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
 
-    <div className="bg-white p-6 rounded-3xl shadow">
-      <h3 className="font-bold text-violet-600">2</h3>
-      <p>Fill Questionnaire</p>
-    </div>
+          {[
+            "Upload Video",
+            "Fill Questionnaire",
+            "AI Analysis",
+            "Risk Assessment",
+            "Therapy Tracking",
+          ].map((step, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-2xl shadow-sm text-center hover:shadow-md transition"
+            >
+              <h3 className="text-violet-600 font-bold text-2xl">
+                {index + 1}
+              </h3>
 
-    <div className="bg-white p-6 rounded-3xl shadow">
-      <h3 className="font-bold text-violet-600">3</h3>
-      <p>AI Analysis</p>
-    </div>
+              <p className="mt-2 font-medium">
+                {step}
+              </p>
+            </div>
+          ))}
 
-    <div className="bg-white p-6 rounded-3xl shadow">
-      <h3 className="font-bold text-violet-600">4</h3>
-      <p>Risk Assessment</p>
-    </div>
+        </div>
 
-    <div className="bg-white p-6 rounded-3xl shadow">
-      <h3 className="font-bold text-violet-600">5</h3>
-      <p>Therapy Tracking</p>
-    </div>
+      </section>
 
-  </div>
+      {/* CORE FEATURES */}
+      <section className="max-w-7xl mx-auto px-8 py-16">
 
-</section>
+        <h2 className="text-4xl font-bold text-center mb-14">
+          Core Features
+        </h2>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-  <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-2">
+          <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition duration-300">
+            <Brain className="text-violet-600 w-12 h-12 mb-5" />
 
-    <Brain className="text-violet-600 w-12 h-12 mb-6" />
+            <h3 className="text-xl font-bold mb-3 text-violet-600">
+              Behavioral Analysis
+            </h3>
 
-    <h3 className="text-2xl font-bold mb-4 text-violet-600">
-      Behavioral Analysis
-    </h3>
+            <p className="text-gray-600">
+              Analyze behavioral patterns including
+              attention, engagement and interaction responses.
+            </p>
+          </div>
 
-    <p className="text-gray-600 leading-relaxed">
-      Analyze behavioral patterns including attention,
-      engagement, and interaction responses using AI models.
-    </p>
+          <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition duration-300">
+            <Eye className="text-violet-600 w-12 h-12 mb-5" />
 
-  </div>
+            <h3 className="text-xl font-bold mb-3 text-violet-600">
+              Video Screening
+            </h3>
 
-  <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-2">
+            <p className="text-gray-600">
+              Detect eye gaze, facial expressions and
+              engagement patterns through computer vision.
+            </p>
+          </div>
 
-    <Eye className="text-violet-600 w-12 h-12 mb-6" />
+          <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition duration-300">
+            <Activity className="text-violet-600 w-12 h-12 mb-5" />
 
-    <h3 className="text-2xl font-bold mb-4 text-violet-600">
-      Video Screening
-    </h3>
+            <h3 className="text-xl font-bold mb-3 text-violet-600">
+              Risk Scoring
+            </h3>
 
-    <p className="text-gray-600 leading-relaxed">
-      Detect eye gaze, facial expressions, and engagement
-      patterns through computer vision analysis.
-    </p>
+            <p className="text-gray-600">
+              Generate weighted hybrid confidence scores
+              using machine learning analysis.
+            </p>
+          </div>
 
-  </div>
+          <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition duration-300">
+            <BarChart3 className="text-violet-600 w-12 h-12 mb-5" />
 
-  <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-2">
+            <h3 className="text-xl font-bold mb-3 text-violet-600">
+              Therapy Tracking
+            </h3>
 
-    <Activity className="text-violet-600 w-12 h-12 mb-6" />
+            <p className="text-gray-600">
+              Monitor therapy effectiveness and progress
+              through cognitive activity evaluation.
+            </p>
+          </div>
 
-    <h3 className="text-2xl font-bold mb-4 text-violet-600">
-      Risk Scoring
-    </h3>
+        </div>
 
-    <p className="text-gray-600 leading-relaxed">
-      Generate weighted hybrid confidence scores using
-      multimodal machine learning analysis.
-    </p>
-
-  </div>
-
-  <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-2">
-
-    <BarChart3 className="text-violet-600 w-12 h-12 mb-6" />
-
-    <h3 className="text-2xl font-bold mb-4 text-violet-600">
-      Therapy Tracking
-    </h3>
-
-    <p className="text-gray-600 leading-relaxed">
-      Monitor therapy effectiveness through cognitive
-      activities and progress-based evaluation.
-    </p>
-
-  </div>
-
-</div>
-<div className="text-center py-10 text-gray-500">
-  Developed by students of ISE
-</div>
-</section>
+        <div className="text-center mt-16 text-gray-500">
+          Developed by students of ISE
+        </div>
 
       </section>
 
     </div>
-    
   );
 }
