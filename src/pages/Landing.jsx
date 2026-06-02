@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import heroImage from "../assets/usethis.png";
-import logo from "../assets/usethis.png";
+
 
 import {
   Brain,
