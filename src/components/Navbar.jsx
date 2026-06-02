@@ -6,9 +6,19 @@ export default function Navbar({ darkMode, setDarkMode }) {
   return (
     <nav className="w-full bg-white dark:bg-gray-900 shadow-sm px-8 py-4 flex items-center justify-between transition duration-300">
 
-      <h1 className="text-3xl font-bold text-violet-500">
-  MindBloom
-</h1>
+      <div className="flex items-center gap-3">
+
+  <img
+    src={logo}
+    alt="MindBloom Logo"
+    className="w-12 h-12 object-contain"
+  />
+
+  <h1 className="text-3xl font-bold text-violet-600">
+    MindBloom
+  </h1>
+
+</div>
 
       <div className="flex gap-6 text-gray-700 dark:text-gray-200 font-medium items-center">
 
