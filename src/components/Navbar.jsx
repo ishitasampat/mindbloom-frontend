@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Moon, Sun } from "lucide-react";
+import logo from "../assets/usethis.png";
 
 export default function Navbar({ darkMode, setDarkMode }) {
   return (
