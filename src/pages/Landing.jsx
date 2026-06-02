@@ -45,6 +45,42 @@ export default function Landing({ darkMode, setDarkMode }) {
   <h2 className="text-5xl font-bold text-center mb-16">
     Core Features
   </h2>
+  <section className="py-24 px-10">
+
+  <h2 className="text-5xl font-bold text-center mb-16">
+    How MindBloom Works
+  </h2>
+
+  <div className="grid md:grid-cols-5 gap-6">
+
+    <div className="bg-white p-6 rounded-3xl shadow">
+      <h3 className="font-bold text-violet-600">1</h3>
+      <p>Upload Video</p>
+    </div>
+
+    <div className="bg-white p-6 rounded-3xl shadow">
+      <h3 className="font-bold text-violet-600">2</h3>
+      <p>Fill Questionnaire</p>
+    </div>
+
+    <div className="bg-white p-6 rounded-3xl shadow">
+      <h3 className="font-bold text-violet-600">3</h3>
+      <p>AI Analysis</p>
+    </div>
+
+    <div className="bg-white p-6 rounded-3xl shadow">
+      <h3 className="font-bold text-violet-600">4</h3>
+      <p>Risk Assessment</p>
+    </div>
+
+    <div className="bg-white p-6 rounded-3xl shadow">
+      <h3 className="font-bold text-violet-600">5</h3>
+      <p>Therapy Tracking</p>
+    </div>
+
+  </div>
+
+</section>
 
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
